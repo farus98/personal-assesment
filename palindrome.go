@@ -8,6 +8,7 @@ import (
 )
 
 func canFormPalindrome(s string) bool {
+	// Map untuk menyimpan frekuensi setiap karakter (rune)
 	freq := make(map[rune]int)
 
 	// Hitung frekuensi tiap huruf
@@ -29,7 +30,7 @@ func canFormPalindrome(s string) bool {
 
 func main() {
 
-	// Membaca input dari pengguna
+	// Membaca input dari user
 	fmt.Print("Masukkan string: ")
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
@@ -38,7 +39,6 @@ func main() {
 		return
 	}
 
-	// Menghapus karakter newline (\n) dari input
 	input = strings.TrimSpace(input)
 
 	fmt.Printf("%s -> %v\n", input, canFormPalindrome(input))

@@ -29,7 +29,8 @@ func firstNonRepeatingChar(s string) rune {
 }
 
 func main() {
-	// Membaca input dari pengguna
+
+	// Membaca input dari user
 	fmt.Print("Masukkan string: ")
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
@@ -38,17 +39,13 @@ func main() {
 		return
 	}
 
-	// Menghapus karakter newline (\n) dari input
 	input = strings.TrimSpace(input)
 
-	// Panggil fungsi
 	result := firstNonRepeatingChar(input)
 
-	// Tampilkan hasil
 	if result == 0 {
 		fmt.Println("None")
 	} else {
-		// fmt.Println("Karakter pertama yang tidak berulang: ", string(result))
 		fmt.Println(string(result))
 	}
 
